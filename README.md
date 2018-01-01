@@ -1,5 +1,7 @@
 # BeanInheritance
 https://www.sagarandcompany.com/
+# Xml based inheritance 
+
 ```java
 public class Animal {
     private String name;
@@ -80,4 +82,23 @@ public class Elephant extends Animal {
 
 ```
 
+# Annotaion based inheritance 
+
+```java
+@Configuration
+public class JavaConfig {
+    @Bean
+    public Elephant getElephant() {
+        Elephant elephant = new Elephant();
+        initilizationAnimal(elephant);
+        elephant.setLocation("Banglore");
+        return elephant;
+    }
+
+    public void initilizationAnimal(Animal animal) {
+        animal.setAge(24);
+        animal.setName("Lion");
+    }
+}
+```
 
